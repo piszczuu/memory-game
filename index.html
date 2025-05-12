@@ -1,55 +1,41 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Simon Game</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    #game {
-      display: grid;
-      grid-template-columns: repeat(2, 100px);
-      gap: 20px;
-      justify-content: center;
-      margin: 30px auto;
-    }
-    .color {
-      width: 100px;
-      height: 100px;
-      border-radius: 10px;
-      cursor: pointer;
-      opacity: 0.8;
-    }
-    .color:hover {
-      opacity: 1;
-    }
-    #red { background: red; }
-    #green { background: green; }
-    #blue { background: blue; }
-    #yellow { background: yellow; }
-    #startBtn {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="title">Memory Game</h1>
+    <hr><br>
+    <h2>Reapeat after</h2>
+    <br /><br /><br />
+    <button id="startBtn">Start</button>
 
-  <h1>Simon Says</h1>
-  <button id="startBtn">Start</button>
+  <div id="overlay"></div>
 
-  <div id="game">
-    <div class="color" id="red"></div>
-    <div class="color" id="green"></div>
-    <div class="color" id="blue"></div>
-    <div class="color" id="yellow"></div>
+  <div id="gameContainer">
+    <div id="game">
+      <div class="color" id="red"></div>
+      <div class="color" id="green"></div>
+      <div class="color" id="blue"></div>
+      <div class="color" id="yellow"></div>
+    </div>
+    <div id="info">
+    <h3 id="roundCount">Tura: 0</h3>
+    <h4 id="clickCount">Liczba kliknięć: 0</h4>
+    </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Game Over!</h2>
+    <div id="modalStats"></div>
+    <button id="modalCloseBtn">Zamknij</button>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
